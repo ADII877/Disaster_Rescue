@@ -588,6 +588,22 @@ body {
   }
 }
 
+/* Improve image scaling for small devices */
+@media (max-width: 600px) {
+  .hero {
+    padding: 70px 20px;
+    background-position: top;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 750px) {
   .header {
     flex-direction: column;
