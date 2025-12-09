@@ -384,9 +384,3 @@
     }
 
 
-@media (max-width: 768px) {
-  .social-media-section a {
-    font-size: 24px; /* Adjust font size for mobile */
-    margin: 0 10px; /* Reduce margin on smaller screens */
-  }
-}
