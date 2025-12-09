@@ -638,91 +638,39 @@ body {
 
 
 
+/* Hamburger Icon (Hidden by Default) */
+.mobile-menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+}
 
-
-
-/* ---------------------------------- */
-/* RESPONSIVE FIXES (SAFE MODE)       */
-/* Does NOT change your UI look       */
-/* Makes layout mobile compatible     */
-/* ---------------------------------- */
-
-/* NAVBAR RESPONSIVE */
+/* MOBILE NAVIGATION */
 @media (max-width: 850px) {
-  .navbar {
-    padding: 16px 20px;
-    flex-wrap: wrap;
-    gap: 12px;
+  .mobile-menu-icon {
+    display: block;
   }
 
-  .nav-menu {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-
+  .nav-menu,
   .nav-buttons {
+    display: none;
     width: 100%;
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 12px 0;
     gap: 12px;
   }
-}
 
-/* HERO RESPONSIVE */
-@media (max-width: 650px) {
-  .hero {
-    padding: 70px 16px;
-    background-size: cover;
-    background-position: center;
-    text-align: center;
+  /* Show menu when "active" */
+  .nav-open .nav-menu,
+  .nav-open .nav-buttons {
+    display: flex;
   }
 
-  .hero h1 {
-    font-size: 26px;
-  }
-
-  .hero p {
-    font-size: 14px;
-  }
-}
-
-/* GRID FIXES */
-@media (max-width: 950px) {
-  .kit-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 650px) {
-  .kit-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .firstaid-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* EVAC LIST FIX */
-@media (max-width: 600px) {
-  .evac-item {
+  /* Navbar layout for mobile */
+  .navbar {
     flex-direction: column;
     align-items: flex-start;
-  }
-}
-
-/* FOOTER RESPONSIVE */
-@media (max-width: 900px) {
-  .footer {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .footer {
-    grid-template-columns: 1fr;
   }
 }
