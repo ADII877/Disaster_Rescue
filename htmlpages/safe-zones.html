@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>Safe Zone Map – Disaster Rescue</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="../css/safeZone.css" />
+<!-- <link rel="stylesheet" href="../css/style.css" /> -->
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="nav-left">
+      🛡️ Disaster Rescue  
+    </div>
+    <div class="nav-menu">
+      <a href="./index.html">Home</a>
+      <a href="./typeOfDisaster.html">Types of Disasters</a>
+      <a href="./Emergency-guide.html">Emergency Guide</a>
+      <a href="./rescue-teams.html">Rescue Teams</a>
+      <a href="./safe-zones.html" class="active">Safe Zones</a>
+      <a href="./sos.html">SOS</a>
+    </div>
+    <div class="nav-buttons">
+      <button class="btn-emergency" onclick="location.href='./sos.html'">📞 Emergency</button>
+      <button class="btn-login">Login</button>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Safe Zone Map</h1>
+    <p>
+      Find the nearest evacuation centers and safe zones in your area during
+      emergencies.
+    </p>
+  </section>
+
+  <!-- Search -->
+  <section class="search-section">
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by location or zone name..."
+      />
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main-layout">
+    <!-- Map Panel -->
+    <section class="map-panel">
+      <div class="map-box">
+        <iframe id="mapEmbed" class="map-embed" src="https://www.google.com/maps?q=evacuation%20center&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="map-legend">
+          <div class="legend-item">
+            <span class="legend-dot legend-dot-user"></span>
+            <span>Your Location</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot legend-dot-safe"></span>
+            <span>Safe Zone</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary full-width" id="useLocationBtn" type="button">
+        <span class="btn-icon">📍</span>
+        Use My Location
+      </button>
+    </section>
+
+    <!-- List Panel -->
+    <section class="list-panel">
+      <div class="list-header">
+        <h2>Nearby Safe Zones <span id="safeZoneCount">(0)</span></h2>
+      </div>
+      <div id="safeZoneList" class="safezone-list">
+        <!-- Cards inserted by JS -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (same for all pages) -->
+ <!-- ===== Footer CTA + Footer ===== -->
+<section class="footer-cta">
+  <div class="footer-cta-inner">
+    <div class="footer-cta-emoji">👨‍👩‍👧‍👦</div>
+    <h2>Create a Family Emergency Plan</h2>
+    <p>
+      Talk with your family about meeting points, emergency contacts,
+      and evacuation routes. Practice your plan regularly.
+    </p>
+    <button id="viewRescueTeamsBtn" class="footer-cta-button">
+      View Rescue Teams →
+    </button>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-divider"></div>
+
+  <div class="footer-main">
+    <!-- Column 1 -->
+    <div class="footer-col">
+      <div class="footer-logo">
+        <div class="footer-logo-icon">🛡️</div>
+        <div>
+          <div class="footer-logo-title">Disaster Rescue</div>
+          <div class="footer-logo-subtitle">Response Center</div>
+        </div>
+      </div>
+      <p class="footer-text">
+        Providing critical disaster-response information, emergency
+        contacts, and coordination support when every second matters.
+      </p>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="footer-col">
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-list">
+        <li><a href="#" class="footer-link">Types of Disasters</a></li>
+        <li><a href="#" class="footer-link">Emergency Guide</a></li>
+        <li><a href="#" class="footer-link">Rescue Teams</a></li>
+        <li><a href="#" class="footer-link">Safe Zones</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="footer-col">
+      <h3 class="footer-heading">Emergency Numbers</h3>
+      <ul class="footer-list">
+        <li>📞 Emergency: <strong>112</strong></li>
+        <li>🔥 Fire: <strong>101</strong></li>
+        <li>🚑 Ambulance: <strong>102</strong></li>
+        <li>👮 Police: <strong>100</strong></li>
+      </ul>
+    </div>
+
+    <!-- Column 4 -->
+    <div class="footer-col">
+       <h4>Contact Us</h4>
+            <p>Exception Handlers Team⬇️</p>
+            <p>1. Aniket Jagdale</p>
+            <p>2. Yogesh Ingulkar</p>
+            <p>3. Shubham Gavli</p>
+            <p>4. Dipak Khedkar</p>
+            <p>5. Aditya Sadekar</p>
+        </div>  
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+            © 2025 Disaster Rescue Response Center. All rights reserved.
+  </div>
+</footer>
+
+
+  <script>
+    // Sample data for safe zones
+const safeZones = [
+  {
+    id: 1,
+    name: "City Community Center",
+    address: "123 Main Street, Central District",
+    distance: "1.2 km",
+    capacity: 500,
+    status: "Open",
+    tags: ["Food", "Water", "Medical Aid", "Beds"],
+    icon: "🏢",
+    phone: "+91-800-111-0001"
+  },
+  {
+    id: 2,
+    name: "Government School Complex",
+    address: "456 Education Lane, North Zone",
+    distance: "2.5 km",
+    capacity: 800,
+    status: "Open",
+    tags: ["Water", "Sanitation", "Open Ground"],
+    icon: "🎓",
+    phone: "+91-800-111-0002"
+  },
+  {
+    id: 3,
+    name: "Central Park Evacuation Point",
+    address: "Central Park, Downtown Area",
+    distance: "3.0 km",
+    capacity: 2000,
+    status: "Open",
+    tags: ["Open Space", "Assembly Point"],
+    icon: "🌳",
+    phone: "+91-800-111-0003"
+  },
+  {
+    id: 4,
+    name: "City Stadium Shelter",
+    address: "789 Arena Road, West Block",
+    distance: "4.5 km",
+    capacity: 3500,
+    status: "Open",
+    tags: ["Food", "Water", "Beds"],
+    icon: "🏟️",
+    phone: "+91-800-111-0004"
+  },
+  {
+    id: 5,
+    name: "Riverside Relief Camp",
+    address: "21 Riverside Lane, East Bank",
+    distance: "5.2 km",
+    capacity: 1500,
+    status: "Open",
+    tags: ["Medical Aid", "Water"],
+    icon: "⛺",
+    phone: "+91-800-111-0005"
+  }
+];
+
+const listContainer = document.getElementById("safeZoneList");
+const countSpan = document.getElementById("safeZoneCount");
+const searchInput = document.getElementById("searchInput");
+const useLocationBtn = document.getElementById("useLocationBtn");
+const userMarker = document.getElementById("userMarker");
+const mapEmbed = document.getElementById("mapEmbed");
+
+function updateMap(query) {
+  if (!mapEmbed) return;
+  const url = `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
+  mapEmbed.src = url;
+}
+
+function renderSafeZones(list) {
+  listContainer.innerHTML = "";
+
+  if (!list.length) {
+    listContainer.innerHTML =
+      `<p style="font-size:13px;color:#6b7280;">No safe zones found for this search.</p>`;
+    countSpan.textContent = "(0)";
+    return;
+  }
+
+  list.forEach((zone) => {
+    const card = document.createElement("article");
+    card.className = "safe-card";
+
+    card.innerHTML = `
+      <div class="safe-card-left">
+        <div class="safe-card-icon">${zone.icon}</div>
+      </div>
+      <div class="safe-card-body">
+        <div class="safe-card-title">${zone.name}</div>
+        <div class="safe-card-address">${zone.address}</div>
+        <div class="safe-card-meta">
+          <span>📍 ${zone.distance}</span>
+          <span>👥 Capacity: ${zone.capacity}</span>
+        </div>
+        <div class="safe-card-tags">
+          ${zone.tags
+            .map(
+              (t) =>
+                `<span class="tag-pill">✔ ${t}</span>`
+            )
+            .join("")}
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" data-directions="${zone.name}">
+            ✈ Directions
+          </button>
+          <button class="btn btn-ghost" data-call="${zone.phone}">
+            📞 Call
+          </button>
+        </div>
+      </div>
+      <div class="safe-card-right">
+        <span class="status-badge">${zone.status}</span>
+      </div>
+    `;
+
+    listContainer.appendChild(card);
+  });
+
+  countSpan.textContent = `(${list.length})`;
+  // Focus map on first result
+  if (list.length) {
+    updateMap(list[0].name);
+  }
+}
+
+// Search/filter
+searchInput.addEventListener("input", (e) => {
+  const query = e.target.value.toLowerCase().trim();
+  const filtered = safeZones.filter((z) => {
+    return (
+      z.name.toLowerCase().includes(query) ||
+      z.address.toLowerCase().includes(query)
+    );
+  });
+  renderSafeZones(filtered);
+});
+
+// Delegated events for Directions & Call buttons
+listContainer.addEventListener("click", (e) => {
+  const directionsName = e.target.getAttribute("data-directions");
+  const callNumber = e.target.getAttribute("data-call");
+
+  if (directionsName) {
+    const query = encodeURIComponent(directionsName);
+    const url = `https://www.google.com/maps/search/?api=1&query=${query}`;
+    window.open(url, "_blank");
+    updateMap(directionsName);
+  }
+
+  if (callNumber) {
+    window.location.href = `tel:${callNumber}`;
+  }
+
+  const card = e.target.closest('.safe-card');
+  if (card) {
+    const titleEl = card.querySelector('.safe-card-title');
+    if (titleEl) updateMap(titleEl.textContent);
+  }
+});
+
+// Use My Location (simple simulation)
+useLocationBtn.addEventListener("click", () => {
+  useLocationBtn.disabled = true;
+  const originalText = useLocationBtn.innerHTML;
+  useLocationBtn.innerHTML = `<span class="btn-icon">⏳</span> Locating...`;
+
+  // Try browser geolocation (optional – only for UX)
+  if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition(
+      () => {
+        showUserLocation(originalText);
+      },
+      () => {
+        showUserLocation(originalText);
+      },
+      { timeout: 4000 }
+    );
+  } else {
+    showUserLocation(originalText);
+  }
+});
+
+function showUserLocation(originalText) {
+  userMarker.style.display = "flex";
+  useLocationBtn.innerHTML =
+    `<span class="btn-icon">✅</span> Location set (approximate)`;
+  setTimeout(() => {
+    useLocationBtn.innerHTML = originalText;
+    useLocationBtn.disabled = false;
+  }, 2000);
+}
+
+// Initial render
+renderSafeZones(safeZones);
+updateMap(safeZones[0].name);
+
+// Footer button – go to Rescue Teams page or section
+// Change URL or selector as per your project.
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("viewRescueTeamsBtn");
+
+  if (!btn) return;
+
+  btn.addEventListener("click", () => {
+    // Option 1: navigate to another page
+    // window.location.href = "rescue-teams.html";
+
+    // Option 2: smooth scroll to section on same page
+    const section = document.querySelector("#rescue-teams");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // fallback: go to page
+      window.location.href = "rescue-teams.html";
+    }
+  });
+});
+
+
+  </script>
+</body>
+</html>

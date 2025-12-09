@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disaster Rescue & Response Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div id="splash">
+        <video id="splash-video" src="../videos/Video Project 1.mp4" autoplay muted playsinline></video>
+    </div>
+  
+<!-- ---------------- NAVBAR ---------------- -->
+<div class="navbar">
+    <div class="nav-left">
+        🛡️ Disaster Rescue  
+    </div>
+    <div class="nav-menu">
+        <a href="./index.html" class="active">Home</a>
+        <a href="./typeOfDisaster.html">Types of Disasters</a>
+        <a href="./Emergency-guide.html">Emergency Guide</a>
+        <a href="./rescue-teams.html">Rescue Teams</a>
+        <a href="./safe-zones.html">Safe Zones</a>
+        <a href="./sos.html">SOS</a>
+    </div>
+    <div class="nav-buttons">
+        <button class="btn-emergency button2" onclick="location.href='./sos.html'">📞 Emergency</button>
+        <button class="btn-login button2">Login</button>
+    </div>
+</div>
+
+<!-- ---------------- HERO SECTION ---------------- -->
+<div class="hero">
+    <h1>Disaster Rescue & <span>Response Center</span></h1>
+    <p>Your lifeline during emergencies. Access critical disaster information, emergency contacts, rescue team locations, and safety guidelines — all in one place.</p>
+
+    <div class="hero-buttons">
+        <button class="btn-sos button2" onclick="location.href='./sos.html'">🚨 Emergency SOS</button>
+        <button class="btn-guide button2" onclick="location.href='./Emergency-guide.html'">📘 Emergency Guide</button>
+    </div>
+</div>
+
+<!-- ---------------- EMERGENCY CONTACTS ---------------- -->
+<h2 class="section-title">Emergency Contacts</h2>
+<p class="section-sub">One-tap calling to essential emergency services. Save these numbers — they could save lives.</p>
+
+<div class="card-grid">
+    <div class="card">
+        <h3><span class="icon">📞</span>National Emergency Number</h3>
+        <p>Single emergency number for Police, Fire, and Ambulance (India)</p>
+        <button class="button2"><span class="icon">📞</span>Call Now →</button>
+    </div>
+
+    <div class="card">
+        <h3><span class="icon">🚓</span>Police</h3>
+        <p>Law enforcement and crime reporting</p>
+        <button class="button2"><span class="icon">📞</span>Call Now →</button>
+    </div>
+
+    <div class="card">
+        <h3><span class="icon">🔥</span>Fire Brigade</h3>
+        <p>Fire emergencies and rescue operations</p>
+        <button class="button2"><span class="icon">📞</span>Call Now →</button>
+    </div>
+</div>
+
+
+<!-- ---------------- TYPES OF DISASTERS ---------------- -->
+<h2 class="section-title">Types of Disasters</h2>
+
+<div class="card-grid">
+    <div class="card">
+        <h3>Earthquakes</h3>
+        <p>Learn how to protect yourself during seismic events.</p>
+        <button class="learn-more" onclick="location.href='./typeOfDisaster.html#earthquakes'">Learn more</button>
+    </div>
+
+    <div class="card">
+        <h3>Floods</h3>
+        <p>Understand warnings, evacuation routes, and safety tips.</p>
+        <button class="learn-more" onclick="location.href='./typeOfDisaster.html#floods'">Learn more</button>
+    </div>
+
+    <div class="card">
+        <h3>Cyclones & Storms</h3>
+        <p>Prepare for strong winds, storms, and severe weather.</p>
+        <button class="learn-more" onclick="location.href='./typeOfDisaster.html#cyclones'">Learn more</button>
+    </div>
+
+    <div class="card">
+        <h3>Fires</h3>
+        <p>Fire safety protocols and prevention tips.</p>
+        <button class="learn-more" onclick="location.href='./typeOfDisaster.html#fires'">Learn more</button>
+    </div>
+</div>
+
+<!-- ---------------- FOOTER ---------------- -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h3>Disaster Rescue</h3>
+            <p>Providing critical disaster response information and emergency coordination to save lives.</p>
+        </div>
+
+        <div>
+            <h4>Quick Links</h4>
+            <p><a href="#">Types of Disasters</a></p>
+            <p><a href="#">Emergency Guide</a></p>
+            <p><a href="#">Rescue Teams</a></p>
+            <p><a href="#">Safe Zones</a></p>
+        </div>
+
+        <div>
+            <h4>Emergency Numbers</h4>
+            <p>Emergency: 112</p>
+            <p>Fire: 101</p>
+            <p>Ambulance: 102</p>
+            <p>Police: 100</p>
+        </div>
+
+        <div>
+            <h4>Contact Us</h4>
+            <p>Exception Handlers Team⬇️</p>
+            <p>1. Aniket Jagdale</p>
+            <p>2. Yogesh Ingulkar</p>
+            <p>3. Shubham Gavli</p>
+            <p>4. Dipak Khedkar</p>
+            <p>5. Aditya Sadekar</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+(function(){
+  var s=document.getElementById('splash');
+  var v=document.getElementById('splash-video');
+  if(!s){return;}
+  var nav=performance.getEntriesByType('navigation');
+  var type=nav&&nav[0]?nav[0].type:'navigate';
+  var ref=document.referrer||'';
+  var sameOrigin=ref.indexOf(location.origin)===0;
+  var shouldShow=(type==='reload')||(!sameOrigin);
+  if(!shouldShow){ s.style.display='none'; return; }
+  s.style.display='flex';
+  function finish(){ if(s){ s.classList.add('splash-hidden'); setTimeout(function(){ s.style.display='none'; },600); } }
+  if(v){
+    v.addEventListener('ended', finish);
+    v.addEventListener('error', finish);
+    try{ v.play(); }catch(e){}
+    setTimeout(finish, 20000);
+  } else { finish(); }
+})();
+</script>
+
+</body>
+</html>

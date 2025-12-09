@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Types of Disasters</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/typeOfDisaster.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="nav-left">
+        🛡️ Disaster Rescue  
+    </div>
+    <div class="nav-menu">
+        <a href="./index.html">Home</a>
+        <a href="./typeOfDisaster.html" class="active">Types of Disasters</a>
+        <a href="./Emergency-guide.html">Emergency Guide</a>
+        <a href="./rescue-teams.html">Rescue Teams</a>
+        <a href="./safe-zones.html">Safe Zones</a>
+        <a href="./sos.html">SOS</a>
+    </div>
+    <div class="nav-buttons">
+        <button class="btn-emergency" onclick="location.href='./sos.html'">📞 Emergency</button>
+        <button class="btn-login">Login</button>
+    </div>
+</div>
+
+<!-- HEADER SECTION -->
+<section class="page-header">
+    <h1>Types of Disasters</h1>
+    <p>Understanding different disaster types helps you prepare better and respond effectively when emergencies strike.</p>
+</section>
+
+<!-- DISASTER BLOCK TEMPLATE (use multiple) -->
+<div class="disaster-container">
+    
+
+    <!-- EARTHQUAKES -->
+    <section id="earthquakes" class="disaster-card pink">
+        <div class="disaster-header">
+            <div class="icon">🔺</div>
+            <div>
+                <h2>Earthquakes</h2>
+                <p>Sudden shaking of the ground caused by movement of tectonic plates.</p>
+            </div>
+        </div>
+
+        <div class="disaster-media">
+            <img class="disaster-img" src="../images/earthq.jpg" alt="Earthquake damage and cracked ground">
+        </div>
+
+        <div class="disaster-content">
+            <div class="col">
+                <h3>🟠 Common Causes</h3>
+                <ul>
+                    <li>Movement of tectonic plates</li>
+                    <li>Volcanic activity</li>
+                    <li>Human activities like mining or reservoir-induced seismicity</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3>🟢 Safety During Disaster</h3>
+                <ul>
+                    <li>Drop, Cover, and Hold On during shaking</li>
+                    <li>Stay away from windows and heavy furniture</li>
+                    <li>Move to open areas when outside</li>
+                    <li>Evacuate if the building is damaged</li>
+                    <li>Be prepared for aftershocks</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3>🔵 How to Prepare</h3>
+                <ul>
+                    <li>Create an emergency kit</li>
+                    <li>Secure heavy furniture</li>
+                    <li>Know evacuation routes</li>
+                    <li>Practice earthquake drills</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLOODS -->
+    <section id="floods" class="disaster-card blue">
+        <div class="disaster-header">
+            <div class="icon">🌊</div>
+            <div>
+                <h2>Floods</h2>
+                <p>Overflow of water that submerges normally dry land.</p>
+            </div>
+        </div>
+
+        <div class="disaster-media">
+            <img class="disaster-img" src="../images/floods.jpg" alt="Flooded streets and high water levels">
+        </div>
+
+        <div class="disaster-content">
+            <div class="col">
+                <h3>🟠 Common Causes</h3>
+                <ul>
+                    <li>Heavy rainfall</li>
+                    <li>River overflow</li>
+                    <li>Dam or levee failure</li>
+                    <li>Coastal storms and tsunamis</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3>🟢 Safety During Disaster</h3>
+                <ul>
+                    <li>Move to higher ground</li>
+                    <li>Never walk or drive through flood waters</li>
+                    <li>Stay away from power lines</li>
+                    <li>Listen to emergency broadcasts</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3>🔵 How to Prepare</h3>
+                <ul>
+                    <li>Know flood risk and evacuation routes</li>
+                    <li>Store documents in waterproof containers</li>
+                    <li>Keep emergency supply kit ready</li>
+                    <li>Consider flood insurance</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CYCLONES -->
+    <section id="cyclones" class="disaster-card yellow">
+        <div class="disaster-header">
+            <div class="icon">🌬️</div>
+            <div>
+                <h2>Cyclones & Hurricanes</h2>
+                <p>Rotating storm systems with powerful winds and rain.</p>
+            </div>
+        </div>
+
+        <div class="disaster-media">
+            <img class="disaster-img" src="../images/Cyclones & Hurricanes.gif" alt="Cyclone clouds and severe storm conditions">
+        </div>
+
+        <div class="disaster-content">
+            <div class="col">
+                <h3>🟠 Common Causes</h3>
+                <ul>
+                    <li>Warm ocean waters</li>
+                    <li>Atmospheric instability</li>
+                    <li>Low wind shear</li>
+                    <li>Coriolis force</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3>🟢 Safety During Disaster</h3>
+                <ul>
+                    <li>Stay indoors</li>
+                    <li>Secure windows and doors</li>
+                    <li>Follow evacuation routes</li>
+                    <li>Avoid being outdoors in storm eye</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3>🔵 How to Prepare</h3>
+                <ul>
+                    <li>Board up windows</li>
+                    <li>Stock food, water, and medication</li>
+                    <li>Know shelter locations</li>
+                    <li>Keep radio and flashlights ready</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- WILDFIRES -->
+    <section id="fires" class="disaster-card pink">
+        <div class="disaster-header">
+            <div class="icon">🔥</div>
+            <div>
+                <h2>Wildfires</h2>
+                <p>Uncontrolled fires that spread quickly through vegetation.</p>
+            </div>
+        </div>
+
+        <div class="disaster-media">
+            <img class="disaster-img" src="../images/fire.gif" alt="Wildfire flames and smoke plume">
+        </div>
+
+        <div class="disaster-content">
+            <div class="col">
+                <h3>🟠 Common Causes</h3>
+                <ul>
+                    <li>Lightning strikes</li>
+                    <li>Human negligence</li>
+                    <li>Arson</li>
+                    <li>Power line sparks</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3>🟢 Safety During Disaster</h3>
+                <ul>
+                    <li>Evacuate immediately</li>
+                    <li>Close windows & doors</li>
+                    <li>Cover face with wet cloth</li>
+                    <li>Drive with headlights on</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3>🔵 How to Prepare</h3>
+                <ul>
+                    <li>Create defensible space</li>
+                    <li>Prepare emergency “go-bag”</li>
+                    <li>Know evacuation routes</li>
+                    <li>Clean roof & gutters</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- THUNDERSTORMS -->
+    <section class="disaster-card yellow">
+        <div class="disaster-header">
+            <div class="icon">⛈️</div>
+            <div>
+                <h2>Thunderstorms</h2>
+                <p>Storms with lightning, rain, and sometimes hail.</p>
+            </div>
+        </div>
+
+        
+        <div class="disaster-media">
+            <img class="disaster-img" src="../images/Thunderstorms.gif" alt="Wildfire flames and smoke plume">
+        </div>
+
+        <div class="disaster-content">
+            <div class="col">
+                <h3>🟠 Common Causes</h3>
+                <ul>
+                    <li>Warm, moist air rising</li>
+                    <li>Cold fronts</li>
+                    <li>Atmospheric instability</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3>🟢 Safety During Disaster</h3>
+                <ul>
+                    <li>Seek shelter indoors</li>
+                    <li>Avoid tall trees & metal objects</li>
+                    <li>Unplug electrical appliances</li>
+                    <li>Wait 30 minutes after last thunder</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3>🔵 How to Prepare</h3>
+                <ul>
+                    <li>Install surge protectors</li>
+                    <li>Trim trees near home</li>
+                    <li>Keep flashlights ready</li>
+                    <li>Know difference between watch & warning</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- COLD WAVES -->
+    <section class="disaster-card blue">
+        <div class="disaster-header">
+            <div class="icon">❄️</div>
+            <div>
+                <h2>Cold Waves</h2>
+                <p>Extended period of extremely cold weather.</p>
+            </div>
+        </div>
+
+        
+        <div class="disaster-media">
+            <img class="disaster-img" src="../images/cold.gif" alt="Wildfire flames and smoke plume">
+        </div>
+
+        <div class="disaster-content">
+            <div class="col">
+                <h3>🟠 Common Causes</h3>
+                <ul>
+                    <li>Arctic air masses moving south</li>
+                    <li>High-pressure systems</li>
+                    <li>Polar vortex disruption</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3>🟢 Safety During Disaster</h3>
+                <ul>
+                    <li>Stay indoors and warm</li>
+                    <li>Wear layers of clothing</li>
+                    <li>Avoid overexertion</li>
+                    <li>Check on elderly</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3>🔵 How to Prepare</h3>
+                <ul>
+                    <li>Insulate pipes</li>
+                    <li>Stock heating supplies</li>
+                    <li>Have blankets ready</li>
+                    <li>Prepare car kits</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- EPIDEMICS -->
+    <section class="disaster-card yellow">
+        <div class="disaster-header">
+            <div class="icon">🦠</div>
+            <div>
+                <h2>Epidemics</h2>
+                <p>Rapid spread of infectious disease affecting many people.</p>
+            </div>
+        </div>
+
+        
+        <div class="disaster-media">
+            <img class="disaster-img" src="../images/Epidemics.gif" alt="Wildfire flames and smoke plume">
+        </div>
+
+        <div class="disaster-content">
+            <div class="col">
+                <h3>🟠 Common Causes</h3>
+                <ul>
+                    <li>Viral or bacterial pathogens</li>
+                    <li>Poor sanitation</li>
+                    <li>Lack of vaccination</li>
+                    <li>International travel</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3>🟢 Safety During Disaster</h3>
+                <ul>
+                    <li>Follow public health guidelines</li>
+                    <li>Practice good hygiene</li>
+                    <li>Wear masks</li>
+                    <li>Stay home if sick</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3>🔵 How to Prepare</h3>
+                <ul>
+                    <li>Keep masks & sanitizers</li>
+                    <li>Stock medications</li>
+                    <li>Know health department contacts</li>
+                    <li>Have communication plan</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-grid">
+        <div>
+            <h3>🛡️ Disaster Rescue</h3>
+            <p>Providing life-saving emergency information and rescue coordination.</p>
+        </div>
+
+        <div>
+            <h4>Quick Links</h4>
+            <p>Types of Disasters</p>
+            <p>Emergency Guide</p>
+            <p>Rescue Teams</p>
+            <p>Safe Zones</p>
+        </div>
+
+        <div>
+            <h4>Emergency Numbers</h4>
+            <p>112 – Emergency</p>
+            <p>101 – Fire</p>
+            <p>102 – Ambulance</p>
+            <p>100 – Police</p>
+        </div>
+
+        <div>
+            <h4>Contact Us</h4>
+            <p>Exception Handlers Team⬇️</p>
+            <p>1. Aniket Jagdale</p>
+            <p>2. Yogesh Ingulkar</p>
+            <p>3. Shubham Gavli</p>
+            <p>4. Dipak Khedkar</p>
+            <p>5. Aditya Sadekar</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

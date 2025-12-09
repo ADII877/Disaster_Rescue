@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Disaster Rescue – Emergency Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/Emergency-guide.css">
+<!-- <link rel="stylesheet" href="../css/style.css"> -->
+</head>
+<body>
+  <!-- HEADER / NAVBAR -->
+  <div class="navbar">
+    <div class="nav-left">
+      🛡️ Disaster Rescue  
+    </div>
+    <div class="nav-menu">
+      <a href="./index.html">Home</a>
+      <a href="./typeOfDisaster.html">Types of Disasters</a>
+      <a href="./Emergency-guide.html" class="active">Emergency Guide</a>
+      <a href="./rescue-teams.html">Rescue Teams</a>
+      <a href="./safe-zones.html">Safe Zones</a>
+      <a href="./sos.html">SOS</a>
+    </div>
+    <div class="nav-buttons">
+      <button class="btn-emergency" onclick="location.href='./sos.html'">📞 Emergency</button>
+      <button class="btn-login">Login</button>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO / BANNER -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Emergency Guide</h1>
+        <p>
+          Essential information and step-by-step actions to help keep you and your
+          family safe during emergencies.
+        </p>
+      </div>
+    </section>
+
+    <!-- IMMEDIATE DANGER STRIP -->
+    <section class="danger-strip">
+      <div class="danger-text">⚠️ In immediate danger?</div>
+      <div class="danger-actions">
+        <a href="tel:112" class="btn btn-danger big-btn">Call Emergency (112)</a>
+        <a href="./safe-zones.html" class="btn btn-success big-btn">Find Safe Zone</a>
+      </div>
+    </section>
+
+    <!-- EMERGENCY SURVIVAL KIT -->
+    <section class="section">
+      <div class="section-header icon-header">
+        <div class="icon-badge cube">📦</div>
+        <div>
+          <h2>Emergency Survival Kit</h2>
+          <p>Every home should have a basic kit prepared in advance.</p>
+        </div>
+      </div>
+
+      <div class="kit-status">
+        <span id="kitProgressText">0 / 6 items ready</span>
+        <span class="kit-note">Progress is stored in your browser (local).</span>
+      </div>
+
+      <div class="kit-grid">
+        <!-- each card has a checkbox that is synced to localStorage -->
+        <article class="kit-card" data-kit-id="water">
+          <div class="kit-card-header">
+            <div class="kit-icon">💧</div>
+            <div class="kit-title">
+              <h3>Water</h3>
+              <p>At least 1 gallon per person per day for 3 days.</p>
+            </div>
+            <label class="kit-toggle">
+              <input type="checkbox" class="kit-checkbox" />
+              <span>Ready</span>
+            </label>
+          </div>
+        </article>
+
+        <article class="kit-card" data-kit-id="food">
+          <div class="kit-card-header">
+            <div class="kit-icon">🥫</div>
+            <div class="kit-title">
+              <h3>Food</h3>
+              <p>3-day supply of non-perishable food items.</p>
+            </div>
+            <label class="kit-toggle">
+              <input type="checkbox" class="kit-checkbox" />
+              <span>Ready</span>
+            </label>
+          </div>
+        </article>
+
+        <article class="kit-card" data-kit-id="radio">
+          <div class="kit-card-header">
+            <div class="kit-icon">📻</div>
+            <div class="kit-title">
+              <h3>Radio</h3>
+              <p>Battery-powered or hand-crank radio for updates.</p>
+            </div>
+            <label class="kit-toggle">
+              <input type="checkbox" class="kit-checkbox" />
+              <span>Ready</span>
+            </label>
+          </div>
+        </article>
+
+        <article class="kit-card" data-kit-id="flashlight">
+          <div class="kit-card-header">
+            <div class="kit-icon">🔦</div>
+            <div class="kit-title">
+              <h3>Flashlight</h3>
+              <p>With spare batteries or rechargeable power source.</p>
+            </div>
+            <label class="kit-toggle">
+              <input type="checkbox" class="kit-checkbox" />
+              <span>Ready</span>
+            </label>
+          </div>
+        </article>
+
+        <article class="kit-card" data-kit-id="firstaid">
+          <div class="kit-card-header">
+            <div class="kit-icon">⛑️</div>
+            <div class="kit-title">
+              <h3>First Aid Kit</h3>
+              <p>Bandages, medications, antiseptic, and gloves.</p>
+            </div>
+            <label class="kit-toggle">
+              <input type="checkbox" class="kit-checkbox" />
+              <span>Ready</span>
+            </label>
+          </div>
+        </article>
+
+        <article class="kit-card" data-kit-id="documents">
+          <div class="kit-card-header">
+            <div class="kit-icon">📄</div>
+            <div class="kit-title">
+              <h3>Documents</h3>
+              <p>Copies of IDs, insurance papers, and contacts.</p>
+            </div>
+            <label class="kit-toggle">
+              <input type="checkbox" class="kit-checkbox" />
+              <span>Ready</span>
+            </label>
+          </div>
+        </article>
+      </div>
+
+      <div class="pro-tip">
+        <strong>Pro tip:</strong> Keep your kit in an easy-to-reach place and
+        review supplies every 6 months to replace anything expired.
+      </div>
+    </section>
+
+    <!-- EVACUATION PROCEDURE -->
+    <section class="section">
+      <div class="loader">
+        <div class="truckWrapper">
+          <div class="truckBody">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 198 93" class="trucksvg">
+              <path stroke-width="3" stroke="#282828" fill="#F83D3D" d="M135 22.5H177.264C178.295 22.5 179.22 23.133 179.594 24.0939L192.33 56.8443C192.442 57.1332 192.5 57.4404 192.5 57.7504V89C192.5 90.3807 191.381 91.5 190 91.5H135C133.619 91.5 132.5 90.3807 132.5 89V25C132.5 23.6193 133.619 22.5 135 22.5Z"></path>
+              <path stroke-width="3" stroke="#282828" fill="#7D7C7C" d="M146 33.5H181.741C182.779 33.5 183.709 34.1415 184.078 35.112L190.538 52.112C191.16 53.748 189.951 55.5 188.201 55.5H146C144.619 55.5 143.5 54.3807 143.5 53V36C143.5 34.6193 144.619 33.5 146 33.5Z"></path>
+              <path stroke-width="2" stroke="#282828" fill="#282828" d="M150 65C150 65.39 149.763 65.8656 149.127 66.2893C148.499 66.7083 147.573 67 146.5 67C145.427 67 144.501 66.7083 143.873 66.2893C143.237 65.8656 143 65.39 143 65C143 64.61 143.237 64.1344 143.873 63.7107C144.501 63.2917 145.427 63 146.5 63C147.573 63 148.499 63.2917 149.127 63.7107C149.763 64.1344 150 64.61 150 65Z"></path>
+              <rect stroke-width="2" stroke="#282828" fill="#FFFCAB" rx="1" height="7" width="5" y="63" x="187"></rect>
+              <rect stroke-width="2" stroke="#282828" fill="#282828" rx="1" height="11" width="4" y="81" x="193"></rect>
+              <rect stroke-width="3" stroke="#282828" fill="#DFDFDF" rx="2.5" height="90" width="121" y="1.5" x="6.5"></rect>
+              <rect stroke-width="2" stroke="#282828" fill="#DFDFDF" rx="2" height="4" width="6" y="84" x="1"></rect>
+            </svg>
+          </div>
+          <div class="truckTires">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 30" class="tiresvg">
+              <circle stroke-width="3" stroke="#282828" fill="#282828" r="13.5" cy="15" cx="15"></circle>
+              <circle fill="#DFDFDF" r="7" cy="15" cx="15"></circle>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 30" class="tiresvg">
+              <circle stroke-width="3" stroke="#282828" fill="#282828" r="13.5" cy="15" cx="15"></circle>
+              <circle fill="#DFDFDF" r="7" cy="15" cx="15"></circle>
+            </svg>
+          </div>
+          <div class="road"></div>
+          <svg xml:space="preserve" viewBox="0 0 453.459 453.459" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="Capa_1" version="1.1" fill="#000000" class="lampPost">
+            <path d="M252.882,0c-37.781,0-68.686,29.953-70.245,67.358h-6.917v8.954c-26.109,2.163-45.463,10.011-45.463,19.366h9.993 c-1.65,5.146-2.507,10.54-2.507,16.017c0,28.956,23.558,52.514,52.514,52.514c28.956,0,52.514-23.558,52.514-52.514 c0-5.478-0.856-10.872-2.506-16.017h9.992c0-9.354-19.352-17.204-45.463-19.366v-8.954h-6.149C200.189,38.779,223.924,16,252.882,16 c29.952,0,54.32,24.368,54.32,54.32c0,28.774-11.078,37.009-25.105,47.437c-17.444,12.968-37.216,27.667-37.216,78.884v113.914 h-0.797c-5.068,0-9.174,4.108-9.174,9.177c0,2.844,1.293,5.383,3.321,7.066c-3.432,27.933-26.851,95.744-8.226,115.459v11.202h45.75 v-11.202c18.625-19.715-4.794-87.527-8.227-115.459c2.029-1.683,3.322-4.223,3.322-7.066c0-5.068-4.107-9.177-9.176-9.177h-0.795 V196.641c0-43.174,14.942-54.283,30.762-66.043c14.793-10.997,31.559-23.461,31.559-60.277C323.202,31.545,291.656,0,252.882,0z M232.77,111.694c0,23.442-19.071,42.514-42.514,42.514c-23.442,0-42.514-19.072-42.514-42.514c0-5.531,1.078-10.957,3.141-16.017 h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"></path>
+          </svg>
+        </div>
+      </div>
+
+      <ol class="evac-list">
+        <li class="evac-item">
+          <div class="evac-number">1</div>
+          <div class="evac-content">
+            <h3>Know Your Routes</h3>
+            <p>Identify at least two evacuation routes from your area and check for closures or diversions.</p>
+          </div>
+        </li>
+
+        <li class="evac-item">
+          <div class="evac-number">2</div>
+          <div class="evac-content">
+            <h3>Prepare Your Vehicle</h3>
+            <p>Keep the fuel tank topped up and store basic emergency supplies in the car.</p>
+          </div>
+        </li>
+
+        <li class="evac-item">
+          <div class="evac-number">3</div>
+          <div class="evac-content">
+            <h3>Secure Your Home</h3>
+            <p>Turn off utilities if instructed, lock doors and windows, and take photos for insurance.</p>
+          </div>
+        </li>
+
+        <li class="evac-item">
+          <div class="evac-number">4</div>
+          <div class="evac-content">
+            <h3>Take Your Emergency Kit</h3>
+            <p>Carry your pre-packed emergency kit with essential items and documents.</p>
+          </div>
+        </li>
+
+        <li class="evac-item">
+          <div class="evac-number">5</div>
+          <div class="evac-content">
+            <h3>Go to a Safe Location</h3>
+            <p>Move to the designated evacuation center or a safe area outside the affected zone.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- BASIC FIRST AID -->
+    <section class="section">
+      <div class="section-header icon-header">
+        <div class="icon-badge heart">❤️</div>
+        <div>
+          <h2>Basic First Aid</h2>
+          <p>Simple life-saving actions everyone should understand.</p>
+        </div>
+      </div>
+
+      <div class="firstaid-grid">
+        <article class="firstaid-card">
+          <h3>Bleeding</h3>
+          <ul>
+            <li>Apply firm pressure with a clean cloth.</li>
+            <li>Elevate the injured area if possible.</li>
+            <li>Do not remove deeply embedded objects.</li>
+            <li>Seek medical help for heavy or persistent bleeding.</li>
+          </ul>
+        </article>
+
+        <article class="firstaid-card">
+          <h3>Burns</h3>
+          <ul>
+            <li>Cool the burn under running water for 10 minutes.</li>
+            <li>Cover with a sterile, non-fluffy dressing.</li>
+            <li>Avoid ice, butter, or home remedies.</li>
+            <li>Get help for large or deep burns.</li>
+          </ul>
+        </article>
+
+        <article class="firstaid-card">
+          <h3>CPR Basics</h3>
+          <ul>
+            <li>Check for responsiveness and breathing.</li>
+            <li>Call emergency services.</li>
+            <li>Provide 30 chest compressions followed by 2 rescue breaths.</li>
+            <li>Continue until help arrives or the person recovers.</li>
+          </ul>
+        </article>
+
+        <article class="firstaid-card">
+          <h3>Choking</h3>
+          <ul>
+            <li>Encourage coughing if the person can breathe.</li>
+            <li>Give back blows between the shoulder blades.</li>
+            <li>Use abdominal thrusts if obstruction persists.</li>
+            <li>Call for help if the person becomes unresponsive.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="disclaimer">
+        <strong>Important:</strong>
+        This information is only a basic guide. For full training, attend a certified first-aid course. Always contact emergency services for serious injuries.
+      </div>
+    </section>
+
+    <!-- FAMILY EMERGENCY PLAN CTA + FOOTER -->
+    <section class="family-plan">
+      <div class="family-plan-inner">
+        <div class="family-icon">👨‍👩‍👧‍👦</div>
+        <h2>Create a Family Emergency Plan</h2>
+        <p>
+          Talk with your family about meeting points, emergency contacts, and evacuation routes.
+          Practice your plan regularly.
+        </p>
+        <a href="#" class="btn btn-light">
+          View Rescue Teams →
+        </a>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-section">
+          <div class="brand footer-brand">
+            <div class="brand-icon">🛡️</div>
+            <div class="brand-text">
+              <span class="brand-title">Disaster Rescue</span>
+              <span class="brand-subtitle">Response Center</span>
+            </div>
+          </div>
+          <p class="footer-description">
+            Providing critical disaster-response information, emergency contacts, and
+            coordination support when every second matters.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+                    <li><a href="./typeOfDisaster.html">Types of Disasters</a></li>
+                    <li><a href="./Emergency-guide.html">Emergency Guide</a></li>
+                    <li><a href="#">Rescue Teams</a></li>
+                    <li><a href="./safe-zones.html">Safe Zones</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Emergency Numbers</h4>
+          <ul>
+            <li>📞 Emergency: 112</li>
+            <li>🔥 Fire: 101</li>
+            <li>🚑 Ambulance: 102</li>
+            <li>👮 Police: 100</li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+           <h4>Contact Us</h4>
+            <p>Exception Handlers Team⬇️</p>
+            <p>1. Aniket Jagdale</p>
+            <p>2. Yogesh Ingulkar</p>
+            <p>3. Shubham Gavli</p>
+            <p>4. Dipak Khedkar</p>
+            <p>5. Aditya Sadekar</p>
+        </div>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    const KIT_STORAGE_KEY = "dr_emergency_kit_status";
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".kit-card");
+  const progressText = document.getElementById("kitProgressText");
+
+  // Load saved state
+  const saved = loadKitState();
+
+  cards.forEach((card) => {
+    const id = card.dataset.kitId;
+    const checkbox = card.querySelector(".kit-checkbox");
+
+    if (!id || !checkbox) return;
+
+    // Apply saved value
+    if (saved[id]) {
+      checkbox.checked = true;
+      card.classList.add("ready");
+    }
+
+    checkbox.addEventListener("change", () => {
+      const current = loadKitState();
+      current[id] = checkbox.checked;
+      saveKitState(current);
+      updateProgress(cards, progressText);
+      card.classList.toggle("ready", checkbox.checked);
+    });
+  });
+
+  // Initial progress update
+  updateProgress(cards, progressText);
+});
+
+function loadKitState() {
+  try {
+    const raw = localStorage.getItem(KIT_STORAGE_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw);
+    return typeof parsed === "object" && parsed !== null ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+function saveKitState(state) {
+  localStorage.setItem(KIT_STORAGE_KEY, JSON.stringify(state));
+}
+
+function updateProgress(cards, label) {
+  const total = cards.length;
+  let ready = 0;
+  cards.forEach((c) => {
+    const checkbox = c.querySelector(".kit-checkbox");
+    if (checkbox && checkbox.checked) ready++;
+  });
+
+  if (label) {
+    label.textContent = `${ready} / ${total} items ready`;
+  }
+}
+  </script>
+</body>
+</html>
