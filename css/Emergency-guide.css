@@ -634,3 +634,95 @@ body {
 @keyframes roadMove { from { background-position: 0 0; } to { background-position: 48px 0; } }
 @keyframes truckMove { from { transform: translateX(0); } to { transform: translateX(12px); } }
 @keyframes lampFade { from { opacity: .15; } to { opacity: .35; } }
+
+
+
+
+
+
+
+/* ---------------------------------- */
+/* RESPONSIVE FIXES (SAFE MODE)       */
+/* Does NOT change your UI look       */
+/* Makes layout mobile compatible     */
+/* ---------------------------------- */
+
+/* NAVBAR RESPONSIVE */
+@media (max-width: 850px) {
+  .navbar {
+    padding: 16px 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .nav-menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .nav-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+}
+
+/* HERO RESPONSIVE */
+@media (max-width: 650px) {
+  .hero {
+    padding: 70px 16px;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+}
+
+/* GRID FIXES */
+@media (max-width: 950px) {
+  .kit-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .kit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .firstaid-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* EVAC LIST FIX */
+@media (max-width: 600px) {
+  .evac-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* FOOTER RESPONSIVE */
+@media (max-width: 900px) {
+  .footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    grid-template-columns: 1fr;
+  }
+}
