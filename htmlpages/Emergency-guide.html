@@ -16,6 +16,10 @@
     <div class="nav-left">
       🛡️ Disaster Rescue  
     </div>
+    <div class="mobile-menu-icon" onclick="toggleMenu()">
+  ☰
+</div>
+
     <div class="nav-menu">
       <a href="./index.html">Home</a>
       <a href="./typeOfDisaster.html">Types of Disasters</a>
@@ -417,6 +421,13 @@ function updateProgress(cards, label) {
     label.textContent = `${ready} / ${total} items ready`;
   }
 }
+
+    <script>
+function toggleMenu() {
+  document.querySelector(".navbar").classList.toggle("nav-open");
+}
+</script>
+
   </script>
 </body>
 </html>
